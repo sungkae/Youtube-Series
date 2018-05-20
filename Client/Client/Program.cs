@@ -16,6 +16,10 @@ namespace Client
         static void Main(string[] args)
         {
             gameWindow = new RenderWindow(new SFML.Window.VideoMode(800, 600), "Youtube 2D MMORPG");
+
+            //Load Game Data.
+            Graphic.LoadGameAssets();
+
             Game();
         }
 
@@ -24,8 +28,11 @@ namespace Client
 
             while (gameWindow.IsOpen)
             {
-                gameWindow.DispatchEvents();
+                gameWindow.DispatchEvents();    //what is this?
                 gameWindow.Clear(Color.Red);
+
+                Graphic.Render_Graphics();
+
                 gameWindow.Display();
             }
         }
