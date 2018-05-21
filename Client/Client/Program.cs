@@ -19,7 +19,9 @@ namespace Client
 
             //Load Game Data.
             Graphic.LoadGameAssets();
-
+            Map.CheckMaps();
+            Map.LoadMaps();
+            Console.WriteLine("Game has started.");
             Game();
         }
 
@@ -29,7 +31,7 @@ namespace Client
             while (gameWindow.IsOpen)
             {
                 gameWindow.DispatchEvents();    //what is this?
-                gameWindow.Clear(Color.Red);
+                gameWindow.Clear(Color.Black);
 
                 Graphic.Render_Graphics();
 
