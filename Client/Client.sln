@@ -3,18 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{E23FF0B3-0613-409E-BFF7-932BB2728D93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Youtube2DMMORPGClient", "MonoGame\Youtube2DMMORPGClient.csproj", "{3CE7BE9F-3612-4B03-AD18-201F9BCBF490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Youtube2DMMORPGServer", "2DMMORPGServer\Youtube2DMMORPGServer.csproj", "{0BB65538-510E-44CD-831C-89452A23DE7F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Bindings", "Bindings\Bindings.shproj", "{BBD98DBB-7236-4BF1-820E-C439FC799C7F}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Bindings\Bindings.projitems*{0bb65538-510e-44cd-831c-89452a23de7f}*SharedItemsImports = 4
+		Bindings\Bindings.projitems*{bbd98dbb-7236-4bf1-820e-c439fc799c7f}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E23FF0B3-0613-409E-BFF7-932BB2728D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E23FF0B3-0613-409E-BFF7-932BB2728D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E23FF0B3-0613-409E-BFF7-932BB2728D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E23FF0B3-0613-409E-BFF7-932BB2728D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CE7BE9F-3612-4B03-AD18-201F9BCBF490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE7BE9F-3612-4B03-AD18-201F9BCBF490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE7BE9F-3612-4B03-AD18-201F9BCBF490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE7BE9F-3612-4B03-AD18-201F9BCBF490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB65538-510E-44CD-831C-89452A23DE7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB65538-510E-44CD-831C-89452A23DE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB65538-510E-44CD-831C-89452A23DE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB65538-510E-44CD-831C-89452A23DE7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
