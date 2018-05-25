@@ -10,17 +10,20 @@ namespace Youtube2DMMORPGServer
     class General
     {
         private ServerTCP stcp;
-
+        private ServerHandleData shd;
         public void InitializeServer()
         {
             stcp = new ServerTCP();
+            shd = new ServerHandleData();
+
+            shd.InitializeMessages();
+
             for(int i = 1; i<Constants.MAX_PLAYERS; i++)
             {
                 ServerTCP.Clients[i] = new Client();
             }
             stcp.InitializeNetwork();
             Console.WriteLine("Server has started!");
-
         }
     }
 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0BB65538-510E-44CD-831C-89452A23DE7F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_2DMMORPGServer</RootNamespace>
-    <AssemblyName>2DMMORPGServer</AssemblyName>
+    <RootNamespace>Youtube2DMMORPGServer</RootNamespace>
+    <AssemblyName>Youtube2DMMORPGServer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,7 @@
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerHandleData.cs" />
     <Compile Include="ServerTCP.cs" />
   </ItemGroup>
   <ItemGroup>

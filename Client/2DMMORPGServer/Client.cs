@@ -13,9 +13,11 @@ namespace Youtube2DMMORPGServer
         public NetworkStream myStream;
         public bool Closing;
         public byte[] readBuff;
+        private ServerHandleData shd;
 
         public void Start()
         {
+            shd = new ServerHandleData();
             Socket.SendBufferSize = 4096;
             Socket.ReceiveBufferSize = 4096;
             myStream = Socket.GetStream();
@@ -38,6 +40,7 @@ namespace Youtube2DMMORPGServer
                 Array.Resize(ref newbytes, readBytes);
                 Buffer.BlockCopy(readBuff, 0, newbytes, 0, readBytes);
                 //HandleData
+                shd.HandleNetworkMessages(Index, newbytes);
                 myStream.BeginRead(readBuff, 0, Socket.ReceiveBufferSize, OnReceiveData, null);
             }
             catch

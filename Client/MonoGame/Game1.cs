@@ -14,6 +14,7 @@ namespace Youtube2DMMORPGClient
         Texture2D mySprite;
 
         ClientTCP ctcp;
+        ClientHandleData chd;
 
         public Game1()
         {
@@ -31,10 +32,11 @@ namespace Youtube2DMMORPGClient
         {
             // TODO: Add your initialization logic here
             
-            graphics.PreferredBackBufferWidth = 1024;
-            graphics.PreferredBackBufferHeight = 768;
             ctcp = new ClientTCP();
+            chd = new ClientHandleData();
+            chd.InitializeMessages();
             ctcp.ConnectToServer();
+            ctcp.SendLogin();
             base.Initialize();
         }
 
@@ -71,7 +73,7 @@ namespace Youtube2DMMORPGClient
                 Exit();
 
             // TODO: Add your update logic here
-
+            ctcp.SendLogin();
             base.Update(gameTime);
         }
 
