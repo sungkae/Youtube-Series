@@ -7,7 +7,7 @@ namespace Youtube2DMMORPGClient
     class ClientTCP
     {
         public TcpClient PlayerSocket;
-        private NetworkStream myStream;
+        private static NetworkStream myStream;
         private ClientHandleData chd;
         private byte[] asyncBuff;
         private bool connecting;
@@ -29,7 +29,7 @@ namespace Youtube2DMMORPGClient
             PlayerSocket.SendBufferSize = 4096;
             PlayerSocket.NoDelay = false;
             Array.Resize(ref asyncBuff, 8192);
-            PlayerSocket.BeginConnect("127.0.0.1", 5555, ConnectCallback, PlayerSocket);
+            PlayerSocket.BeginConnect("127.0.0.1", 5555, new AsyncCallback(ConnectCallback), PlayerSocket);
             connecting = true;
         }
 

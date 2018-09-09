@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using GeonBit.UI;
 namespace Youtube2DMMORPGClient
 {
     /// <summary>
@@ -35,8 +35,9 @@ namespace Youtube2DMMORPGClient
             ctcp = new ClientTCP();
             chd = new ClientHandleData();
             chd.InitializeMessages();
-            ctcp.ConnectToServer();
-            ctcp.SendLogin();
+            //ctcp.ConnectToServer();
+            //ctcp.SendLogin();
+            UserInterface.Initialize(Content, BuiltinThemes.hd);
             base.Initialize();
         }
 
@@ -69,11 +70,11 @@ namespace Youtube2DMMORPGClient
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            UserInterface.Active.Update(gameTime);
             // TODO: Add your update logic here
-            ctcp.SendLogin();
+            //ctcp.SendLogin();
             base.Update(gameTime);
         }
 
@@ -84,9 +85,10 @@ namespace Youtube2DMMORPGClient
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
-            spriteBatch.Begin();
+            /*spriteBatch.Begin();
             spriteBatch.Draw(mySprite, Vector2.Zero, Color.White);
-            spriteBatch.End();
+            spriteBatch.End();*/
+            UserInterface.Active.Draw(spriteBatch);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
